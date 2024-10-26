@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classic nokia snake</title>
+    <style>
+        body {
+            font-family: monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            margin: 0;
+            background-color: #333;
+            color: lime;
+        }
+        #game {
+            line-height: 1;
+        }
+        .controls {
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(3, 50px);
+            gap: 5px;
+        }
+        .button {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            background-color: lime;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <pre id="game"></pre>
+
+    <div class="controls">
+        <div class="button"></div>
+        <div class="button" onclick="setDirection(0, -1)">⬆️</div>
+        <div class="button"></div>
+        <div class="button" onclick="setDirection(-1, 0)">⬅️</div>
+        <div class="button"></div>
+        <div class="button" onclick="setDirection(1, 0)">➡️</div>
+        <div class="button"></div>
+        <div class="button" onclick="setDirection(0, 1)">⬇️</div>
+        <div class="button"></div>
+    </div>
+
+    <script>
+        const width = 50;
+        const height = 30;
+        const gameElement = document.getElementById('game');
+        
+        let snake = [{ x: 1, y: 1 }];
+        let direction = { x: 1, y: 0 };
+        let apple = { x: 5, y: 5 };
+        let gameOver = false;
+
+        function drawGame() {
+            let output = '';
+
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    if (x === 0 || y === 0 || x === width - 1 || y === height - 1) {
+                        output += '#';
+                    } else if (x === apple.x && y === apple.y) {
+                        output += 'F';
+                    } else if (snake.some(segment => segment.x === x && segment.y === y)) {
+                        output += 'o';
+                    } else {
+                        output += ' ';
+                    }
+                }
+                output += '\n';
+            }
+
+            gameElement.textContent = output;
+        }
+
+        function updateGame() {
+            if (gameOver) return;
+
+            const head = { x: snake[0].x + direction.x, y: snake[0].y + direction.y };
+
+            if (head.x === 0 || head.y === 0 || head.x === width - 1 || head.y === height - 1 || snake.some(segment => segment.x === head.x && segment.y === head.y)) {
+                gameOver = true;
+                alert("Permainan selesai!");
+                return;
+            }
+
+            snake.unshift(head);
+
+            if (head.x === apple.x && head.y === apple.y) {
+                apple = {
+                    x: Math.floor(Math.random() * (width - 2)) + 1,
+                    y: Math.floor(Math.random() * (height - 2)) + 1
+                };
+            } else {
+                snake.pop();
+            }
+            drawGame();
+        }
+
+        function setDirection(x, y) {
+            if ((x !== -direction.x || y !== -direction.y)) {
+                direction = { x, y };
+            }
+        }
+
+        document.addEventListener('keydown', (event) => {
+            const key = event.key;
+            if (key === 'ArrowUp' && direction.y === 0) setDirection(0, -1);
+            if (key === 'ArrowDown' && direction.y === 0) setDirection(0, 1);
+            if (key === 'ArrowLeft' && direction.x === 0) setDirection(-1, 0);
+            if (key === 'ArrowRight' && direction.x === 0) setDirection(1, 0);
+        });
+
+        setInterval(updateGame, 500);
+        drawGame();
+    </script>
+</body>
+</html>

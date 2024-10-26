@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>kalkulator</title> 
+  <link rel="stylesheet" href="style.css"> 
+ <style type="text/css" id="dcoder_stylesheet">body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white; /* Warna putih untuk latar belakang keseluruhan */
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* Sans-serif font */
+}
+
+.calculator {
+    width: 320px;
+    background-color: #666666; /* Warna abu-abu tua untuk kalkulator */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.display {
+    background-color: #cccccc; /* Warna abu-abu muda untuk layar kalkulator */
+    border-radius: 10px 10px 0 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 30px solid #666666; /* Batas yang lebih tebal dengan warna kalkulator */
+}
+
+#result {
+    width: 100%;
+    border: none;
+    background-color: #cccccc; /* Warna abu-abu muda untuk latar belakang input */
+    font-size: 2em;
+    color: #333;
+    font-family: 'Arial', sans-serif; /* Sans-serif font */
+    text-align: center; /* Center the text initially */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.btn {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.5em;
+    color: white;
+    background-color: #ff9500;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #ffa733;
+}
+
+.equals {
+    background-color: #ff3b30;
+}
+
+.equals:hover {
+    background-color: #ff6255;
+}
+
+.footer {
+    margin-top: 20px;
+}
+
+.footer p {
+    font-size: 1.2em;
+    color: #333;
+    font-family: 'Arial', sans-serif; /* Sans-serif font */
+}</style></head> 
+ <body> 
+  <div class="calculator"> 
+   <div class="display"> 
+    <input type="text" id="result" disabled> 
+   </div> 
+   <div class="buttons"> <button class="btn" onclick="clearScreen()">AC</button> <button class="btn" onclick="deleteLast()">⌫</button> <button class="btn" onclick="insert('%')">%</button> <button class="btn" onclick="insert('/')">÷</button> <button class="btn" onclick="insert('7')">7</button> <button class="btn" onclick="insert('8')">8</button> <button class="btn" onclick="insert('9')">9</button> <button class="btn" onclick="insert('*')">×</button> <button class="btn" onclick="insert('4')">4</button> <button class="btn" onclick="insert('5')">5</button> <button class="btn" onclick="insert('6')">6</button> <button class="btn" onclick="insert('-')">−</button> <button class="btn" onclick="insert('1')">1</button> <button class="btn" onclick="insert('2')">2</button> <button class="btn" onclick="insert('3')">3</button> <button class="btn" onclick="insert('+')">+</button> <button class="btn" onclick="insert('0')">0</button> <button class="btn" onclick="insert('0')">0</button> <button class="btn" onclick="insert('.')">,</button> <button class="btn equals" onclick="calculate()">=</button> 
+   </div> 
+  </div> 
+  <div class="footer"> 
+   <p> </p> 
+  </div> 
+  <script src="script.js"></script> 
+ 
+<script type="text/javascript" id="dcoder_script">function insert(num) {
+    var resultDisplay = document.getElementById('result');
+    resultDisplay.style.textAlign = 'right';
+    resultDisplay.value += num;
+    
+    // Cek jika angka "29999552" dimasukkan
+    if (resultDisplay.value.includes("29999552")) {
+        // Tampilkan pesan "Password detection"
+        resultDisplay.value = "Unlocked";
+        setTimeout(() => {
+            window.location.href = "https://www.tiktok.com/@azka.arr?_t=8nDhgkGvOkL&_r=1"; // Ganti dengan link yang diinginkan
+        }, ); // Tampilkan pesan selama 2 detik sebelum mengarahkan ke link
+    }
+    
+    // Cek jika angka "050511" dimasukkan
+    if (resultDisplay.value.includes("887990")) {
+        // Tampilkan pesan "Password detection"
+        resultDisplay.value = "Unlocked";
+        setTimeout(() => {
+            window.location.href = "https://wa.me/+62881027307867"; // Ganti dengan link yang diinginkan
+        }, ); // Tampilkan pesan selama 2 detik sebelum mengarahkan ke link
+    }
+    
+         // Cek jika angka "050511" dimasukkan
+    if (resultDisplay.value.includes("9980")) {
+        // Tampilkan pesan "Password detection"
+        resultDisplay.value = "Unlocked";
+        setTimeout(() => {
+            window.location.href ="https://www.tiktok.com/@itsme.straven?_t=8nsjS7WH53i&_r=1"; // Ganti dengan link yang diinginkan
+        }, 0000); // Tampilkan pesan selama 2 detik sebelum mengarahkan ke link
+    }
+}
+
+function clearScreen() {
+    document.getElementById('result').value = '';
+}
+
+function deleteLast() {
+    var result = document.getElementById('result').value;
+    document.getElementById('result').value = result.substring(0, result.length - 1);
+}
+
+function calculate() {
+    var resultDisplay = document.getElementById('result');
+    try {
+        resultDisplay.value = eval(resultDisplay.value);
+    } catch (e) {
+        resultDisplay.value = 'ERROR';
+        setTimeout(() => {
+            resultDisplay.value = '';
+        }, 2000); // Hapus pesan error setelah 2 detik
+    }
+}
+
+// Tampilkan nama tanpa berkedip saat halaman pertama kali dimuat
+window.onload = function() {
+    const resultDisplay = document.getElementById('result');
+    resultDisplay.style.textAlign = 'center';
+    resultDisplay.style.fontStyle = 'normal'; // Mengatur font-style ke normal
+    resultDisplay.style.fontWeight = 'normal'; // Mengatur font-weight ke normal
+    resultDisplay.value = 'Azka';
+    setTimeout(() => {
+        resultDisplay.value = '';
+        resultDisplay.style.textAlign = 'right';
+    }, 1100); // Tampilkan selama 3 detik
+}</script></body></html>
