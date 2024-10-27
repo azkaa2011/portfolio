@@ -618,7 +618,7 @@ h2 {
 .icon {
     padding: 0;
     margin: left;
-    margin-top: 15px; 
+    margin-top: 25px; 
     -webkit-tap-highlight-color: transparent; 
     outline: none; 
     font-size: 1.5rem; 
@@ -729,7 +729,7 @@ body {
     font-weight: bold;
     border-radius: 50px;
     transition: background 0.3s;
-    margin-top: 20px;
+    margin-top: 12px;
     margin: left;
     margin-right: 50%;
     user-select: none;
