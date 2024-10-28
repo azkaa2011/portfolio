@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Halaman Utama -->
+  <url>
+      <loc>https://arworks.vercel.app/</loc>
+      <lastmod>2024-10-28</lastmod>
+      <priority>1.0</priority>
+  </url>
+
+  <!-- Bagian dalam halaman -->
+  <url>
+      <loc>https://arworks.vercel.app/#about</loc>
+      <lastmod>2024-10-28</lastmod>
+      <priority>0.8</priority>
+  </url>
+  <url>
+      <loc>https://arworks.vercel.app/#projects</loc>
+      <lastmod>2024-10-28</lastmod>
+      <priority>0.8</priority>
+  </url>
+  <url>
+      <loc>https://arworks.vercel.app/#contact</loc>
+      <lastmod>2024-10-28</lastmod>
+      <priority>0.8</priority>
+  </url>
+
+  <!-- Proyek Scratch -->
+  <url>
+      <loc>https://scratch.mit.edu/projects/1026940287</loc>
+      <priority>0.7</priority>
+  </url>
+  <url>
+      <loc>https://scratch.mit.edu/projects/1018155845</loc>
+      <priority>0.7</priority>
+  </url>
+  <url>
+      <loc>https://scratch.mit.edu/projects/1018155249</loc>
+      <priority>0.7</priority>
+  </url>
+
+  <!-- Halaman Proyek lain yang relevan -->
+  <url>
+      <loc>https://arworks.vercel.app/KALKULATOR.html</loc>
+      <lastmod>2024-10-28</lastmod>
+      <priority>0.6</priority>
+  </url>
+  <url>
+      <loc>https://arworks.vercel.app/worm.html</loc>
+      <lastmod>2024-10-28</lastmod>
+      <priority>0.6</priority>
+  </url>
+
+  <!-- Link gambar atau file lain, jika ingin dimasukkan -->
+  <url>
+      <loc>https://lysander-frost.github.io/Foto/IMG-20240429-WA0026.jpg</loc>
+      <priority>0.5</priority>
+  </url>
+  <url>
+      <loc>https://lysander-frost.github.io/Foto/IMG-20240429-WA0019.jpg</loc>
+      <priority>0.5</priority>
+  </url>
+  <url>
+      <loc>https://lysander-frost.github.io/Foto/IMG-20240429-WA0009.jpg</loc>
+      <priority>0.5</priority>
+  </url>
+
+</urlset>
