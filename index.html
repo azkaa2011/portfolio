@@ -36,8 +36,8 @@
     <a href="https://t.me/Lysander_frost" target="_blank"><i class="fab fa-telegram"></i></a>
   </div>
    <a href="#about" class="cta-button fade-in2" id="myButton">Learn More</a>
-        <iframe src="https://grabify.link/EZ4Q8Q" style="border: none; width: 0px; height: 0px;"></iframe>
-    </section>
+     <iframe src="https://grabify.link/EZ4Q8Q" style="border: none; width: 0px; height: 0px;"></iframe>
+  </section>
 
     <!-- About Section -->
     <section class="about" id="about">
@@ -49,6 +49,99 @@
         <div class="text" id="text">
             <p class="fade-in-slide">and how to create attractive layouts. Although I am still learning, I always strive to improve my skills and explore new things in the world of technology. I believe that with practice and dedication, I can achieve more in the future. Thank you for visiting this page!</p>        
         </div>
+                <div class="audio-player fade-in">
+            <audio id="audio5" src="flymetothemoon.mp3"></audio>
+            <div class="controls">
+                <button class="play-pause">
+                    <i class="fa-solid fa-play play-icon"></i>
+                    <i class="fa-solid fa-pause pause-icon"></i>
+                </button>
+                <input type="range" class="progress" value="0" max="100">
+                <span class="time">
+                    <span></span> 
+                    <span><a href="https://drive.usercontent.google.com/u/0/uc?id=1bbuY3b8CmoWwB3M4hb6AdePf2rmASbjs&export=download"><i class="fas fa-download" style="color: #fff; padding: 0 10px;"></i></a></span>
+                </span>
+            </div>
+            <script>
+// Menambahkan event listener untuk setiap pemutar audio
+(function() {
+    // Namespace untuk audio player
+    const AudioPlayerNamespace = {
+        currentlyPlaying: null,
+
+        updatePlayPauseButton(audio, playIcon, pauseIcon) {
+            if (audio.paused || audio.currentTime === 0) {
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
+            } else {
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            }
+        },
+
+        playAudio(audio, playIcon, pauseIcon) {
+            if (this.currentlyPlaying && this.currentlyPlaying !== audio) {
+                this.currentlyPlaying.pause();
+                this.currentlyPlaying.currentTime = 0;
+            }
+            audio.play();
+            this.currentlyPlaying = audio;
+            this.updatePlayPauseButton(audio, playIcon, pauseIcon);
+        },
+
+        pauseAudio(audio, playIcon, pauseIcon) {
+            audio.pause();
+            this.currentlyPlaying = null;
+            this.updatePlayPauseButton(audio, playIcon, pauseIcon);
+        },
+
+        init() {
+            document.querySelectorAll('.audio-player').forEach(player => {
+                const audio = player.querySelector('audio');
+                const playPauseBtn = player.querySelector('.play-pause');
+                const playIcon = playPauseBtn.querySelector('.play-icon');
+                const pauseIcon = playPauseBtn.querySelector('.pause-icon');
+                const progress = player.querySelector('.progress');
+
+                // Set volume penuh (100%)
+                audio.volume = 1.0;
+
+                // Memperbarui ikon saat metadata di-load
+                audio.addEventListener('loadedmetadata', () => {
+                    this.updatePlayPauseButton(audio, playIcon, pauseIcon);
+                });
+
+                audio.addEventListener('timeupdate', () => {
+                    const value = (audio.currentTime / audio.duration) * 100;
+                    progress.value = value;
+                    this.updatePlayPauseButton(audio, playIcon, pauseIcon);
+                });
+
+                playPauseBtn.addEventListener('click', () => {
+                    if (audio.paused) {
+                        this.playAudio(audio, playIcon, pauseIcon);
+                    } else {
+                        this.pauseAudio(audio, playIcon, pauseIcon);
+                    }
+                });
+
+                progress.addEventListener('input', () => {
+                    const time = (progress.value / 100) * audio.duration;
+                    audio.currentTime = time;
+                });
+
+                audio.addEventListener('ended', () => {
+                    this.pauseAudio(audio, playIcon, pauseIcon);
+                });
+            });
+        }
+    };
+
+    // Inisialisasi audio player
+    AudioPlayerNamespace.init();
+})();
+
+            </script>
     </section>
 
     <!-- Projects Section -->
