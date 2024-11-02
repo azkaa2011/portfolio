@@ -518,8 +518,22 @@ a {
     border-radius: 50%;
     margin-right: 20px;
     margin-top: 8px;
+    position: relative; /* Perlu untuk animasi */
+    animation: moveUpDown 3s ease-in-out infinite;
 }
 
+/* Keyframes untuk animasi */
+@keyframes moveUpDown {
+    0% {
+      top: -5px; /* Mulai di posisi atas */
+    }
+    50% {
+      top: 5px; /* Bergerak ke bawah */
+    }
+    100% {
+      top: -5px; /* Kembali ke posisi atas */
+    }
+}
 .about-content p {
     font-size: 1.05rem;
     line-height: 1.4rem;
