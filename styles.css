@@ -1,5 +1,58 @@
 
 /* General Styles */
+@media only screen and (max-width: 380px) {
+    .profile-pic {
+    width: 45%;
+    border-radius: 50%;
+    border: 3px solid #1febff;
+    margin-bottom: 10px;
+    margin-top: -60px;
+    pointer-events: none;
+}
+.profile h2 {
+    font-size: 1.65rem;
+    color: #1febff;
+    margin-top: -25px;
+    margin-bottom: -15px;
+    text-align: left;
+    align-items: left;
+    user-select: none;
+}
+    .cta-button {
+    padding: 3px 10px;
+    background: transparent;
+    border: 3px solid #1febff;
+    color: #1febff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background 0.3s;
+    margin-top: 17px;
+    margin-right: 45%;
+    user-select: none;
+  -webkit-tap-highlight-color: transparent; /* Menghilangkan highlight di perangkat mobile */
+  outline: none;
+}
+    .social-icons {
+    margin-right: 45%;
+    background-color: transparent;
+    display: flex;
+    gap: 18px; /* Jarak antar ikon */
+}
+    * {
+        user-select: none;
+    }
+    .description {
+    font-size: 0.93rem;
+    text-align: left;
+    margin: 0px 0;
+    padding: 0 20px;
+    min-width: 150px;
+    color: #f0f0f0;
+    font-family: "Roboto Slab", serif;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
