@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" oncontextmenu="return false;"><head><style> ::selection {background-color: #666; color: #fff;}</style><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +23,34 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <script src="https://pf30.vercel.app/script.js"></script>
 <script src="https://easyquiz.vercel.app/6guh66tgggv.js"></script>
+ <style>input[type="text"], input[type="email"], textarea:focus {
+        outline: none;
+        box-shadow: none;
+           background-color: transparent;
+    }
+        .sb {
+            width: 80vw;
+            padding: 10px;
+            margin-left: -1px;
+            background-color: #17a3cc;
+            border: none;
+            color: #111;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent; /* Menghilangkan highlight di perangkat mobile */
+            outline: none;
+         }
+  .sb:focus {
+      outline: none;
+        }
+        .sb:hover {
+            background-color: #1c86ee;
+        }</style>
 </head><body><section class="profile" id="profile">
 <img src="https://lysander-frost.github.io/file/profile1.webp" alt="Profile Picture" class="profile-pic fade-in-rotate2" id="profile-pic">
 <h2>M<span id="typing"></span></h2>
@@ -59,7 +88,9 @@
 <div class="form-container fade-in-scale"><form id="contactForm" autocomplete="off"><label for="name">Name:</label>
 <input type="text" id="name" placeholder="Enter your name" name="name" required autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><label for="email">Email:</label>
 <input type="email" id="email" placeholder="Enter your email" name="email" required autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><label for="message">Message:</label><textarea id="message" placeholder="Message...." name="message" rows="10" required autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
-<input type="submit" value="Submit"></form></div></section><script>
+<button type="submit" class="sb">
+    <i class="fab fa-whatsapp"></i> Submit
+</button></form></div></section><script>
  window.onload = function() {window.scrollTo(0, 0);};
  document.getElementById('contactForm').addEventListener('submit', function(event) {event.preventDefault(); const name = document.getElementById('name').value; const email = document.getElementById('email').value; const message = document.getElementById('message').value; const whatsappMessage = `> ${email}\n\nHalo, Saya ${name}. ${message}`; const phoneNumber = '6282142909096'; const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`; window.open(whatsappURL, '_blank'); });</script>
 <footer class="footer fade-in"><p>&#169;&#32;&#50;&#48;&#50;&#52;&#32;&#98;&#121;&#32;&#65;&#122;&#107;&#97;&#46;&#32;&#87;&#104;&#101;&#114;&#101;&#32;&#105;&#100;&#101;&#97;&#115;&#32;&#99;&#111;&#109;&#101;&#32;&#116;&#111;&#32;&#108;&#105;&#102;&#101;</p></footer><script>
